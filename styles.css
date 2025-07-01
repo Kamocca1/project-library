@@ -251,14 +251,12 @@ button.new-book {
     padding: 0.7rem 2.2rem;
     border: none;
     border-radius: 0.8rem;
-    box-shadow: 0 2px 8px rgba(25, 146, 212, 0.10);
     margin: 2rem auto 1.5rem auto;
     display: block;
 }
 
 button.new-book:hover,
 button.new-book:focus {
-    background: var(--blue);
-    box-shadow: 0 6px 18px rgba(25, 146, 212, 0.18);
+    box-shadow: var(--box-shadow);
     outline: none;
 }
