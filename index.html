@@ -11,6 +11,49 @@
 
 <body>
     <h1>My Library</h1>
+    <button class="new-book">New Book</button>
+    <dialog class="new-book" closedby="any">
+        <p class="dialog-title">Please fill in the form to add a new book to your library</p>
+        <form class="form new-book" method="post" action="./">
+            <div class="form-group">
+                <label for="title">
+                    Title <span class="required-mark" aria-label="required">*</span>
+                </label>
+                <input type="text" id="title" name="title" placeholder="The Great Gatsby">
+            </div>
+            <div class="form-group">
+                <label for="author">
+                    Author <span class="required-mark" aria-label="required">*</span>
+                </label>
+                <input type="text" id="author" name="author" placeholder="F. Scott Fitzgerald">
+            </div>
+            <div class="form-group">
+                <label for="imageUrl">
+                    Image URL <span class="required-mark" aria-label="required">*</span>
+                </label>
+                <input type="url" id="imageUrl" name="imageUrl" placeholder="https://example.com/cover.jpg">
+            </div>
+            <div class="form-group">
+                <label for="pages">
+                    Pages <span class="required-mark" aria-label="required">*</span>
+                </label>
+                <input type="number" id="pages" name="pages" placeholder="180" min="1" step="1">
+            </div>
+            <div class="form-group">
+                <fieldset>
+                    <legend>Read</legend>
+                    <input type="radio" id="read" name="read" value="false" checked>
+                    <label for="read">No</label>
+                    <input type="radio" id="read" name="read" value="true">
+                    <label for="read">Yes</label>
+                </fieldset>
+            </div>
+            <div class="form-group">
+                <button class="close" formmethod="dialog" autofocus>Close</button>
+                <button class="submit" type="submit">Submit</button>
+            </div>
+        </form>
+    </dialog>
     <div class="container">
 
     </div>

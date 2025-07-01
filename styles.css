@@ -5,8 +5,7 @@
     --dark-grey: #656565;
     --blue: #1992d4;
     --yellow: #f0b429;
-    --box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
-        0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --box-shadow: 0 8px 32px rgba(25, 146, 212, 0.25), 0 1.5px 8px rgba(0,0,0,0.08);;
 }
 
 html {
@@ -61,8 +60,205 @@ h6 {
     overflow-wrap: break-word;
 }
 
+h1 {
+    text-align: center;
+    color: var(--blue);
+    box-shadow: var(--box-shadow);
+}
+
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-auto-rows: minmax(200px, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.book {
+    background: var(--white);
+    border-radius: 1.2rem;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.2rem 1rem 1.5rem 1rem;
+    position: relative;
+    min-height: 380px;
+}
+
+.book-image {
+    width: 200px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.read-status {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    width: 2.2rem;
+    height: 2.2rem;
+    background: #38b000;
+}
+
+.book .title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0.5rem 0 0.2rem 0;
+    text-align: center;
+}
+
+.book .author {
+    color: var(--dark-grey);
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+    text-align: center;
+}
+
+.book .pages {
+    color: var(--blue);
+    font-size: 0.95rem;
+    margin-bottom: 0.7rem;
+    text-align: center;
+}
+
+.book button {
+    margin: 0.2rem 0.2rem 0 0.2rem;
+    padding: 0.4rem 1.1rem;
+    border: none;
+    border-radius: 0.5rem;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.book button.remove {
+    background: #e53e3e;
+}
+
+.book button.toggle-read {
+    background: var(--blue);
+}
+
+dialog.new-book::backdrop {
+    background-image: linear-gradient(
+    45deg,
+    magenta,
+    rebeccapurple,
+    dodgerblue,
+    green
+    );
+    opacity: 0.75;
+}
+
+dialog.new-book {
+    border: none;
+    border-radius: 1.2rem;
+    padding: 2.5rem 2rem 2rem 2rem;
+    max-width: 400px;
+    margin: auto;
+}
+
+dialog.new-book .dialog-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    text-align: center;
+    color: var(--blue);
+}
+
+dialog.new-book form.form.new-book {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+dialog.new-book .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+dialog.new-book input[type="text"],
+dialog.new-book input[type="url"],
+dialog.new-book input[type="number"] {
+    padding: 0.6rem 0.8rem;
+    border: 1.5px solid var(--dark-grey);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background: var(--light-grey);
+}
+
+dialog.new-book input:focus {
+    border: 2px solid var(--blue);
+    outline: none;
+}
+
+dialog.new-book fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+}
+
+dialog.new-book legend {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--dark-grey);
+    margin-bottom: 0.2rem;
+}
+
+dialog.new-book .form-group button {
+    margin: 0 0.5rem 0 0;
+    padding: 0.5rem 1.3rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+}
+
+dialog.new-book button.close {
+    background: var(--light-grey);
+    color: var(--dark-grey);
+}
+
+dialog.new-book button.submit {
+    background: var(--blue);
+    color: var(--white);
+}
+
+dialog.new-book .form-group {
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 0.7rem;
+}
+
+dialog.new-book input[type="radio"] {
+    accent-color: var(--blue);
+}
+
+button.new-book {
+    background: var(--blue);
+    color: var(--white);
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.7rem 2.2rem;
+    border: none;
+    border-radius: 0.8rem;
+    box-shadow: 0 2px 8px rgba(25, 146, 212, 0.10);
+    margin: 2rem auto 1.5rem auto;
+    display: block;
+}
+
+button.new-book:hover,
+button.new-book:focus {
+    background: var(--blue);
+    box-shadow: 0 6px 18px rgba(25, 146, 212, 0.18);
+    outline: none;
 }
