@@ -121,6 +121,15 @@ const formElement = document.querySelector("form.new-book");
 formElement.addEventListener("submit", (e) => {
     e.preventDefault();
 
+    // Use Constraint Validation API to check validity
+    if (!formElement.checkValidity()) {
+        // If the form is invalid, show the browser's built-in validation UI
+        formElement.reportValidity();
+        // Optionally, you can also show a custom message
+        alert("Please fill in all required fields before submitting the form.");
+        return;
+    }
+
     const formData = new FormData(formElement);
     const title = formData.get("title");
     const author = formData.get("author");
